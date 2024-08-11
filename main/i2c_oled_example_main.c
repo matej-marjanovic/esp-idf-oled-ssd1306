@@ -123,18 +123,12 @@ void app_main(void)
             .swap_xy = false,
             .mirror_x = false,
             .mirror_y = false,
-        }
-    };
-    lv_disp_t * disp = lvgl_port_add_disp(&disp_cfg);
+        }};
+    lv_disp_t *disp = lvgl_port_add_disp(&disp_cfg);
 
     /* Rotation of the screen */
     lv_disp_set_rotation(disp, LV_DISP_ROT_NONE);
 
     ESP_LOGI(TAG, "Display LVGL Scroll Text");
-    // Lock the mutex due to the LVGL APIs are not thread-safe
-    if (lvgl_port_lock(0)) {
-        example_lvgl_demo_ui(disp);
-        // Release the mutex
-        lvgl_port_unlock();
-    }
+    example_lvgl_demo_ui(disp);
 }
