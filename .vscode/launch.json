@@ -8,7 +8,7 @@
       "program": "${workspaceFolder}/build/i2c_oled.elf",
       "cwd": "${workspaceFolder}",
       "MIMode": "gdb",
-      "miDebuggerPath": "${command:espIdf.getXtensaGdb}",
+      "miDebuggerPath": "${command:espIdf.getToolchainGdb}",
       "miDebuggerServerAddress": "localhost:3333"
     },
     {
