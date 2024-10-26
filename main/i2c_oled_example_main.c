@@ -16,6 +16,15 @@
 #include "lvgl.h"
 #include "esp_lvgl_port.h"
 
+// To make it work with SH1106 edit sdkconfig as below
+// and set resolution to 132 x 64 in this file.
+
+// # Example Configuration
+// #
+// # CONFIG_EXAMPLE_LCD_CONTROLLER_SSD1306 is not set
+// CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107=y
+// # end of Example Configuration
+
 #if CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107
 #include "esp_lcd_sh1107.h"
 #else
@@ -30,8 +39,8 @@ static const char *TAG = "example";
 //////////////////// Please update the following configuration according to your LCD spec //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define EXAMPLE_LCD_PIXEL_CLOCK_HZ    (400 * 1000)
-#define EXAMPLE_PIN_NUM_SDA           3
-#define EXAMPLE_PIN_NUM_SCL           4
+#define EXAMPLE_PIN_NUM_SDA           4
+#define EXAMPLE_PIN_NUM_SCL           5
 #define EXAMPLE_PIN_NUM_RST           -1
 #define EXAMPLE_I2C_HW_ADDR           0x3C
 
@@ -40,8 +49,8 @@ static const char *TAG = "example";
 #define EXAMPLE_LCD_H_RES              128
 #define EXAMPLE_LCD_V_RES              CONFIG_EXAMPLE_SSD1306_HEIGHT
 #elif CONFIG_EXAMPLE_LCD_CONTROLLER_SH1107
-#define EXAMPLE_LCD_H_RES              64
-#define EXAMPLE_LCD_V_RES              128
+#define EXAMPLE_LCD_H_RES              132
+#define EXAMPLE_LCD_V_RES              64
 #endif
 // Bit number used to represent command and parameter
 #define EXAMPLE_LCD_CMD_BITS           8

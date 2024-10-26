@@ -1,4 +1,9 @@
 {
   "C_Cpp.intelliSenseEngine": "default",
-  "idf.adapterTargetName": "esp32c3"
+  "idf.adapterTargetName": "esp32c3",
+  "idf.flashType": "UART",
+  "idf.port": "/dev/tty.wchusbserial585A0947521",
+  "files.associations": {
+    "esp_lcd_sh1107.h": "c"
+  }
 }
